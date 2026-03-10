@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Parsed Graph Dataset",
+    "description": "Schema for the offline training graphs (Risk/Anchor labels) constructed from raw trajectories.",
+    "type": "object",
+    "properties": {
+        "episode_id": {
+            "type": "string"
+        },
+        "task_id": {
+            "type": "string"
+        },
+        "labels": {
+            "type": "object",
+            "properties": {
+                "risk_target": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Empirical conditional failure probability."
+                },
+                "anchor_targets": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of node indices designated as root-cause anchors (if failure)."
+                }
+            }
+        },
+        "graph": {
+            "type": "object",
+            "properties": {
+                "nodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "features": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                },
+                                "description": "Semantic embeddings or one-hot vectors."
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "type",
+                            "features"
+                        ]
+                    }
+                },
+                "edges": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "source": {
+                                "type": "integer"
+                            },
+                            "target": {
+                                "type": "integer"
+                            },
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "TEMPORAL",
+                                    "TOOL_LINKAGE",
+                                    "REFERENCE",
+                                    "WRITE_PROVENANCE"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "target",
+                            "type"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "nodes",
+                "edges"
+            ]
+        }
+    },
+    "required": [
+        "episode_id",
+        "task_id",
+        "graph"
+    ]
+}

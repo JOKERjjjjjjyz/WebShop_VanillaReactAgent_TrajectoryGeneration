@@ -1,0 +1,186 @@
+{
+  "off": [
+    {
+      "task_idx": 0,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 4050,
+      "elapsed_s": 60.7,
+      "is_success": false
+    },
+    {
+      "task_idx": 1,
+      "reward": 1.0,
+      "steps": 5,
+      "gen_tokens": 417,
+      "elapsed_s": 5.0,
+      "is_success": true
+    },
+    {
+      "task_idx": 2,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 2741,
+      "elapsed_s": 44.3,
+      "is_success": false
+    },
+    {
+      "task_idx": 3,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 3141,
+      "elapsed_s": 50.7,
+      "is_success": false
+    },
+    {
+      "task_idx": 4,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 4506,
+      "elapsed_s": 59.8,
+      "is_success": false
+    },
+    {
+      "task_idx": 5,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 2933,
+      "elapsed_s": 46.0,
+      "is_success": false
+    },
+    {
+      "task_idx": 6,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 5032,
+      "elapsed_s": 70.6,
+      "is_success": false
+    },
+    {
+      "task_idx": 7,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 3266,
+      "elapsed_s": 50.5,
+      "is_success": false
+    },
+    {
+      "task_idx": 8,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 3789,
+      "elapsed_s": 54.7,
+      "is_success": false
+    },
+    {
+      "task_idx": 9,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 3867,
+      "elapsed_s": 57.1,
+      "is_success": false
+    }
+  ],
+  "on": [
+    {
+      "task_idx": 0,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 10268,
+      "elapsed_s": 135.0,
+      "is_success": false
+    },
+    {
+      "task_idx": 1,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 7808,
+      "elapsed_s": 97.6,
+      "is_success": false
+    },
+    {
+      "task_idx": 2,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 8251,
+      "elapsed_s": 107.3,
+      "is_success": false
+    },
+    {
+      "task_idx": 3,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 7501,
+      "elapsed_s": 97.4,
+      "is_success": false
+    },
+    {
+      "task_idx": 4,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 6974,
+      "elapsed_s": 90.2,
+      "is_success": false
+    },
+    {
+      "task_idx": 5,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 5810,
+      "elapsed_s": 76.2,
+      "is_success": false
+    },
+    {
+      "task_idx": 6,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 6655,
+      "elapsed_s": 85.3,
+      "is_success": false
+    },
+    {
+      "task_idx": 7,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 8451,
+      "elapsed_s": 101.8,
+      "is_success": false
+    },
+    {
+      "task_idx": 8,
+      "reward": 0.0,
+      "steps": 20,
+      "gen_tokens": 5565,
+      "elapsed_s": 72.0,
+      "is_success": false
+    },
+    {
+      "task_idx": 9,
+      "reward": 0.7142857142857143,
+      "steps": 17,
+      "gen_tokens": 6038,
+      "elapsed_s": 76.3,
+      "is_success": false
+    }
+  ],
+  "s_off": {
+    "n": 10,
+    "success": 1,
+    "pct": 10.0,
+    "avg_r": 0.1,
+    "avg_s": 18.5,
+    "avg_tok": 3374.2,
+    "avg_t": 49.94,
+    "total_t": 499.40000000000003
+  },
+  "s_on": {
+    "n": 10,
+    "success": 0,
+    "pct": 0.0,
+    "avg_r": 0.07142857142857142,
+    "avg_s": 19.7,
+    "avg_tok": 7332.1,
+    "avg_t": 93.90999999999998,
+    "total_t": 939.0999999999999
+  }
+}

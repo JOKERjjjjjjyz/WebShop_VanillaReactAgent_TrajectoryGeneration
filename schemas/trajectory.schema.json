@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Trajectory",
+  "description": "Unified JSONL schema for recording single-agent ReAct episodes.",
+  "type": "object",
+  "properties": {
+    "episode_id": { "type": "string" },
+    "task_id": { "type": "string" },
+    "seed": { "type": "integer" },
+    "policy_version": { "type": "string" },
+    "toolset_version": { "type": "string" },
+    "metadata": { "type": "object" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": { "type": "integer", "description": "Monotonically increasing ID for structural nodes within the episode." },
+          "node_type": {
+            "type": "string",
+            "enum": ["THOUGHT", "ACT_TOOL", "OBS_TOOL", "MEM_READ", "MEM_WRITE", "ANSWER"]
+          },
+          "call_id": { "type": "string", "description": "Used to link ACT_TOOL and OBS_TOOL pairs." },
+          "payload": {
+            "type": "object",
+            "description": "Content of the node depending on type (e.g. tool_name/args for ACT_TOOL, raw_text for THOUGHT/OBS_TOOL)."
+          },
+          "ref_ids": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "description": "Explicit references (citations) to previous step_ids used in this step (e.g. [[obs:12]] -> [12])."
+          },
+          "timestamp": { "type": "number", "description": "Unix timestamp or local offset for ordering and latency metrics." }
+        },
+        "required": ["step_id", "node_type", "payload", "timestamp"]
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "properties": {
+        "is_success": { "type": "boolean" },
+        "total_cost": { "type": "number" },
+        "termination_reason": { "type": "string" }
+      }
+    }
+  },
+  "required": ["episode_id", "task_id", "steps", "outcome"]
+}
